@@ -4,15 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tomás Antonio · Business Analyst & Product Owner</title>
-<meta name="description" content="Business Analyst and Product Owner for financial services: capitalization, insurance, pension and banking. Requirements, backlog and SDLC across REST APIs, cloud and Mainframe COBOL.">
-<meta property="og:title" content="Tomás Antonio · Business Analyst & Product Owner">
-<meta property="og:description" content="I turn business and regulatory needs into software that engineering teams can build.">
-<meta property="og:type" content="website">
+<meta name="description" content="Business Analyst and Product Owner for financial services: capitalization, insurance, pension and banking. Requirements, backlog and SDLC across REST APIs, cloud and Mainframe COBOL. Remote, English C2.">
+<meta name="theme-color" content="#0f172a">
+<link rel="canonical" href="https://t0masleones.github.io/">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://t0masleones.github.io/">
+<meta property="og:title" content="Tomás Antonio · Business Analyst & Product Owner">
+<meta property="og:description" content="I turn business and regulatory needs into software that engineering teams can build. Financial services · Remote · English C2.">
+<meta property="og:image" content="https://t0masleones.github.io/assets/tomas-antonio.jpg">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta property="og:image:alt" content="Tomás Antonio">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23312E81'/%3E%3Ctext x='32' y='42' font-family='Segoe UI,Arial,sans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ETA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tomás Antonio",
+  "jobTitle": "Business Analyst & Product Owner",
+  "url": "https://t0masleones.github.io/",
+  "image": "https://t0masleones.github.io/assets/tomas-antonio.jpg",
+  "email": "mailto:tomasleones@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Brasília", "addressRegion": "DF", "addressCountry": "BR" },
+  "knowsLanguage": ["pt-BR", "en"],
+  "sameAs": ["https://www.linkedin.com/in/tmslns", "https://github.com/t0masleones"]
+}
+</script>
 <style>
   :root {
     --bg: #f8fafc;
@@ -26,6 +47,8 @@
     --accent-soft: #eef2ff;
     --chip: #ede9fe;
     --chip-text: #5b21b6;
+    --btn-bg: #4f46e5;
+    --btn-text: #ffffff;
     --hero-from: #0f172a;
     --hero-via: #312e81;
     --hero-to: #6d28d9;
@@ -44,13 +67,16 @@
       --accent-soft: #1e1b4b;
       --chip: #2e2557;
       --chip-text: #ddd6fe;
+      --btn-bg: #a78bfa;
+      --btn-text: #0f172a;
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
     }
   }
 
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   body {
     margin: 0;
     background: var(--bg);
@@ -73,39 +99,65 @@
   .skip { position: absolute; left: -999px; top: 8px; background: var(--surface); padding: 8px 12px; border-radius: 8px; z-index: 100; }
   .skip:focus { left: 8px; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
   /* nav */
   .nav {
     position: sticky; top: 0; z-index: 50;
-    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
     backdrop-filter: saturate(1.4) blur(10px);
     border-bottom: 1px solid var(--border);
   }
   .nav .wrap { display: flex; align-items: center; gap: 16px; height: 60px; }
-  .brand { font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
-  .nav-links { display: none; gap: 20px; margin-left: auto; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+  .brand img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+  .nav-links { display: flex; gap: 20px; margin-left: auto; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
   .nav-links a:hover { color: var(--text); }
-  @media (min-width: 860px) { .nav-links { display: flex; } }
-  .nav-actions { display: flex; gap: 8px; margin-left: auto; }
-  @media (min-width: 860px) { .nav-actions { margin-left: 8px; } }
-  .lang-btn {
+  .nav-actions { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
+  .lang-btn, .menu-btn {
     border: 1px solid var(--border); background: var(--surface); color: var(--text);
-    font: inherit; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+    font: inherit; font-size: 13px; font-weight: 700; height: 34px; padding: 0 12px; border-radius: 999px; cursor: pointer;
   }
-  .lang-btn:hover { border-color: var(--accent); }
+  .lang-btn:hover, .menu-btn:hover { border-color: var(--accent); }
+  .menu-btn { display: none; padding: 0 9px; }
+  .menu-btn svg { width: 18px; height: 18px; display: block; }
+  .nav-cv {
+    display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 999px;
+    background: var(--btn-bg); color: var(--btn-text); font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap;
+  }
+  @media (max-width: 859px) {
+    .nav-actions { margin-left: auto; }
+    .menu-btn { display: inline-flex; align-items: center; }
+    .nav-links {
+      display: none; position: absolute; top: 60px; left: 0; right: 0;
+      flex-direction: column; gap: 0; margin: 0; padding: 4px 16px 12px;
+      background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 0; font-size: 16px; border-top: 1px solid var(--border); }
+    .nav-links a:first-child { border-top: 0; }
+    .hide-sm { display: none; }
+  }
 
   /* buttons */
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 15px;
-    text-decoration: none; border: 1px solid transparent; transition: transform .15s ease, background .15s ease;
+    padding: 11px 18px; border-radius: 10px; font-family: inherit; font-weight: 600; font-size: 15px; line-height: 1.3;
+    text-decoration: none; border: 1px solid transparent; background: none; cursor: pointer;
+    transition: transform .15s ease, background .15s ease;
   }
   .btn:hover { transform: translateY(-1px); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
   .btn-primary { background: #ffffff; color: #312e81; }
   .btn-ghost { color: #ffffff; border-color: rgba(255, 255, 255, .35); }
   .btn-ghost:hover { background: rgba(255, 255, 255, .1); }
-  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn-solid { background: var(--btn-bg); color: var(--btn-text); }
+  .btn-outline { background: var(--surface); color: var(--text); border-color: var(--border); }
+  .btn-outline:hover { border-color: var(--accent); }
+  .copied-label { display: none; }
+  .copied .copy-label { display: none; }
+  .copied .copied-label { display: inline; }
 
   /* hero */
   .hero {
@@ -113,27 +165,51 @@
     background:
       radial-gradient(1200px 500px at 85% -10%, rgba(167, 139, 250, .35), transparent 60%),
       linear-gradient(135deg, var(--hero-from) 0%, var(--hero-via) 55%, var(--hero-to) 100%);
-    padding: 72px 0 56px;
+    padding: 64px 0 112px;
   }
-  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #c4b5fd; margin-bottom: 14px; }
-  .hero h1 { font-size: clamp(36px, 7vw, 60px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -.03em; font-weight: 800; }
-  .hero .role { font-size: clamp(18px, 2.6vw, 22px); font-weight: 600; color: #e0e7ff; margin: 0 0 18px; }
-  .hero .lead { font-size: clamp(16px, 2.2vw, 19px); max-width: 720px; color: #e2e8f0; margin: 0 0 28px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; }
+  @media (min-width: 760px) { .hero-grid { grid-template-columns: 1fr auto; gap: 48px; } }
+  .portrait { margin: 0; order: -1; }
+  .portrait img {
+    display: block; width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, .22); box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+  @media (min-width: 760px) {
+    .portrait { order: 0; }
+    .portrait img { width: 196px; height: 196px; border-width: 5px; }
+  }
+  .eyebrow { display: inline-flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #ddd6fe; margin-bottom: 14px; }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 4px rgba(74, 222, 128, .2); flex: none; }
+  .nw { white-space: nowrap; }
+  .hero h1 { font-size: clamp(36px, 7vw, 58px); line-height: 1.05; margin: 0 0 10px; letter-spacing: -.03em; font-weight: 800; }
+  .hero .role { font-size: clamp(18px, 2.6vw, 22px); font-weight: 600; color: #e0e7ff; margin: 0 0 16px; }
+  .hero .lead { font-size: clamp(16px, 2.2vw, 19px); max-width: 680px; color: #e2e8f0; margin: 0 0 26px; }
   .cta { display: flex; flex-wrap: wrap; gap: 10px; }
-  .facts {
-    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
-    margin-top: 44px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .18);
-  }
-  @media (min-width: 760px) { .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  .fact b { display: block; font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
-  .fact span { font-size: 14px; color: #c7d2fe; }
+  .alt-cv { margin: 14px 0 0; font-size: 14px; color: #c7d2fe; }
+  .alt-cv a { color: #ffffff; font-weight: 600; }
+
+  /* snapshot */
+  .snapshot-wrap { position: relative; margin-top: -72px; }
+  .snapshot { padding: 24px; }
+  @media (min-width: 720px) { .snapshot { padding: 28px 32px; } }
+  .snapshot-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+  .snapshot-head h2 { font-size: 20px; margin: 0; }
+  .updated { font-size: 13px; color: var(--muted); margin: 0; }
+  .facts-grid { display: grid; grid-template-columns: 1fr; gap: 0 32px; margin: 16px 0 0; }
+  @media (min-width: 760px) { .facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .facts-grid > div { padding: 10px 0; border-top: 1px solid var(--border); }
+  @media (min-width: 480px) { .facts-grid > div { display: grid; grid-template-columns: 124px 1fr; gap: 12px; } }
+  .facts-grid dt { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding-top: 2px; }
+  .facts-grid dd { margin: 0; font-size: 15px; color: var(--text); }
+  .snapshot-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 
   /* sections */
   section.block { padding: 72px 0 8px; }
   .kicker { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
   h2 { font-size: clamp(26px, 4vw, 34px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 12px; }
-  .section-intro { color: var(--muted); max-width: 720px; margin: 0 0 32px; font-size: 17px; }
+  .section-intro { color: var(--muted); max-width: 720px; margin: 0 0 28px; font-size: 17px; }
   h3 { font-size: 18px; line-height: 1.3; margin: 0 0 8px; letter-spacing: -.01em; }
+  .more { margin: 8px 0 0; font-weight: 600; }
 
   .grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
   @media (min-width: 680px) { .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -146,6 +222,43 @@
   }
   .card p { margin: 0; color: var(--muted); font-size: 15px; }
   .card .num { font-size: 13px; font-weight: 800; color: var(--accent); margin-bottom: 10px; display: block; }
+
+  /* filters */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+  .filter {
+    display: inline-flex; align-items: center; gap: 6px;
+    font: inherit; font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer;
+  }
+  .filter:hover { border-color: var(--accent); }
+  .filter .count { font-size: 12px; color: var(--muted); font-weight: 700; }
+  .filter[aria-pressed="true"] { background: var(--btn-bg); color: var(--btn-text); border-color: transparent; }
+  .filter[aria-pressed="true"] .count { color: inherit; opacity: .8; }
+  .filter-status { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
+
+  /* cases */
+  .case { display: flex; flex-direction: column; gap: 10px; }
+  .case.wide { grid-column: 1 / -1; }
+  .case-body { display: grid; gap: 16px; }
+  @media (min-width: 860px) { .case-body { grid-template-columns: 1.4fr 1fr; align-items: start; } }
+  .tag { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--chip-text); background: var(--chip); padding: 3px 10px; border-radius: 999px; }
+  .case h3 { margin: 0; }
+  .card .meta { font-size: 13px; color: var(--muted); margin-top: -4px; }
+  .card .meta b { color: var(--text); font-weight: 600; }
+  .case dl { margin: 0; display: grid; gap: 8px; }
+  .case dt { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text); }
+  .case dd { margin: 0; color: var(--muted); font-size: 15px; }
+  .case dd.outcome { color: var(--text); border-left: 3px solid var(--accent); padding-left: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .chips span { font-size: 12px; font-weight: 600; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); padding: 2px 9px; border-radius: 6px; }
+
+  /* user story sample */
+  .story-title { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent) !important; margin-bottom: 10px !important; }
+  .card .story-statement { font-size: 17px; color: var(--text); border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin-bottom: 16px; }
+  .story-statement b { color: var(--accent); }
+  .card ol.ac { margin: 0; padding-left: 22px; color: var(--muted); font-size: 15px; }
+  .card ol.ac li { margin: 6px 0; padding-left: 4px; }
+  .card ol.ac b { color: var(--text); }
 
   /* timeline */
   .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
@@ -161,30 +274,10 @@
   .org { font-size: 14px; color: var(--muted); font-weight: 600; margin: 0 0 6px; }
   .timeline p.desc { margin: 0; color: var(--muted); font-size: 15px; max-width: 760px; }
 
-  /* cases */
-  .case { display: flex; flex-direction: column; gap: 10px; }
-  .tag { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--chip-text); background: var(--chip); padding: 3px 10px; border-radius: 999px; }
-  .case h3 { margin: 0; }
-  .case dl { margin: 0; display: grid; gap: 8px; }
-  .case dt { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text); }
-  .case dd { margin: 0; color: var(--muted); font-size: 15px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
-  .chips span { font-size: 12px; font-weight: 600; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); padding: 2px 9px; border-radius: 6px; }
-
-  .case.wide { grid-column: 1 / -1; }
-  .case-body { display: grid; gap: 16px; }
-  @media (min-width: 860px) { .case-body { grid-template-columns: 1.4fr 1fr; align-items: start; } }
-
-  /* user story sample */
-  .story-title { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent) !important; margin-bottom: 10px !important; }
-  .card .story-statement { font-size: 17px; color: var(--text); border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin-bottom: 16px; }
-  .story-statement b { color: var(--accent); }
-  .card ol.ac { margin: 0; padding-left: 22px; color: var(--muted); font-size: 15px; }
-  .card ol.ac li { margin: 6px 0; padding-left: 4px; }
-  .card ol.ac b { color: var(--text); }
-
   /* projects */
   .project { display: grid; gap: 16px; }
+  .project + .project { margin-top: 16px; }
+  .project h3 { margin-top: 12px; }
   @media (min-width: 860px) { .project.featured { grid-template-columns: 1.5fr 1fr; align-items: start; } }
   .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .metric { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
@@ -207,6 +300,7 @@
     margin: 72px 0 0; padding: 40px 24px; border-radius: 20px; color: #ffffff; text-align: center;
     background: linear-gradient(135deg, var(--hero-from), var(--hero-via) 60%, var(--hero-to));
   }
+  .contact-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255, 255, 255, .25); margin-bottom: 12px; }
   .contact-box h2 { color: #ffffff; }
   .contact-box p { color: #e0e7ff; max-width: 620px; margin: 0 auto 24px; }
   .contact-box .cta { justify-content: center; }
@@ -219,18 +313,22 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Tomás Antonio</a>
-    <nav class="nav-links" aria-label="Sections">
+    <a class="brand" href="#top"><img src="assets/tomas-antonio.jpg" alt="" width="30" height="30">Tomás Antonio</a>
+    <nav class="nav-links" id="nav-links" aria-label="Sections">
+      <a href="#work"><span data-l="en">Work</span><span data-l="pt">Cases</span></a>
+      <a href="#experience"><span data-l="en">Experience</span><span data-l="pt">Experiência</span></a>
       <a href="#how"><span data-l="en">How I work</span><span data-l="pt">Como trabalho</span></a>
-      <a href="#journey"><span data-l="en">Journey</span><span data-l="pt">Trajetória</span></a>
-      <a href="#cases"><span data-l="en">Cases</span><span data-l="pt">Cases</span></a>
-      <a href="#story"><span data-l="en">User stories</span><span data-l="pt">Histórias</span></a>
       <a href="#projects"><span data-l="en">Projects</span><span data-l="pt">Projetos</span></a>
       <a href="#skills"><span data-l="en">Skills</span><span data-l="pt">Competências</span></a>
       <a href="#contact"><span data-l="en">Contact</span><span data-l="pt">Contato</span></a>
     </nav>
     <div class="nav-actions">
       <button class="lang-btn" id="lang-btn" type="button" aria-label="Mudar para português">PT</button>
+      <a class="nav-cv" data-l="en" href="cv/Tomas-Antonio-CV-EN.pdf" download><span class="hide-sm">Download&nbsp;</span>CV</a>
+      <a class="nav-cv" data-l="pt" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download><span class="hide-sm">Baixar&nbsp;</span>CV</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -238,81 +336,336 @@
 <main id="main">
 
   <section class="hero" id="top">
-    <div class="wrap">
-      <span class="eyebrow"><span data-l="en">Brasília, Brazil · Remote · English C2</span><span data-l="pt">Brasília, DF · Remoto · Inglês C2</span></span>
-      <h1>Tomás Antonio</h1>
-      <p class="role"><span data-l="en">Business Analyst &amp; Product Owner · Financial Services</span><span data-l="pt">Analista de Negócios &amp; Product Owner · Serviços Financeiros</span></p>
-      <p class="lead">
-        <span data-l="en">I turn business and regulatory needs into software that engineering teams can build: clear requirements, a sharp backlog and a smooth SDLC, from REST APIs and cloud services to Mainframe COBOL.</span>
-        <span data-l="pt">Transformo necessidades de negócio e regulatórias em software que o time de engenharia consegue construir: requisitos claros, backlog bem cuidado e um SDLC sem atritos, das APIs REST e da nuvem ao Mainframe COBOL.</span>
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="cv/Tomas-Antonio-CV-EN.pdf" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-          <span data-l="en">Download CV (English)</span><span data-l="pt">Baixar CV (inglês)</span>
-        </a>
-        <a class="btn btn-ghost" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-          <span data-l="en">CV in Portuguese</span><span data-l="pt">Currículo (português)</span>
-        </a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/tmslns" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="https://github.com/t0masleones" target="_blank" rel="noopener">GitHub</a>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span data-l="en">Open to Senior BA &amp; PO roles · Remote</span><span data-l="pt">Aberto a vagas de BA e PO Sênior · Remoto</span></span>
+        <h1>Tomás Antonio</h1>
+        <p class="role"><span data-l="en">Business Analyst &amp; Product Owner · Financial Services</span><span data-l="pt">Analista de Negócios &amp; Product Owner · Serviços Financeiros</span></p>
+        <p class="lead">
+          <span data-l="en">I turn business and regulatory needs into software that engineering teams can build: clear requirements, a sharp backlog and a smooth SDLC, from REST APIs and cloud services to Mainframe COBOL.</span>
+          <span data-l="pt">Transformo necessidades de negócio e regulatórias em software que o time de engenharia consegue construir: requisitos claros, backlog bem cuidado e um SDLC sem atritos, das APIs REST e da nuvem ao Mainframe COBOL.</span>
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" data-l="en" href="cv/Tomas-Antonio-CV-EN.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Download CV
+          </a>
+          <a class="btn btn-primary" data-l="pt" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Baixar currículo
+          </a>
+          <a class="btn btn-ghost" href="#contact"><span data-l="en">Get in touch</span><span data-l="pt">Fale comigo</span></a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/tmslns" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/t0masleones" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="alt-cv">
+          <span data-l="en">PDF, 2 pages. Also available <a href="cv/Tomas-Antonio-Curriculo-PT.pdf" download>in Portuguese</a>.</span>
+          <span data-l="pt">PDF, 2 páginas. Também disponível <a href="cv/Tomas-Antonio-CV-EN.pdf" download>em inglês</a>.</span>
+        </p>
       </div>
-      <div class="facts">
-        <div class="fact"><b>4+</b><span data-l="en">years in software delivery</span><span data-l="pt">anos em entrega de software</span></div>
-        <div class="fact"><b>222</b><span data-l="en">business processes mapped in 15 days</span><span data-l="pt">processos de negócio mapeados em 15 dias</span></div>
-        <div class="fact"><b>PCBA</b><span data-l="en">Certified Pega Business Architect</span><span data-l="pt">Certified Pega Business Architect</span></div>
-        <div class="fact"><b>C2</b><span data-l="en">English, EF SET Proficient</span><span data-l="pt">Inglês, EF SET Proficient</span></div>
+      <figure class="portrait">
+        <img src="assets/tomas-antonio.jpg" alt="Tomás Antonio" width="400" height="400" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="snapshot-wrap" aria-labelledby="snapshot-title">
+    <div class="wrap">
+      <div class="card snapshot">
+        <div class="snapshot-head">
+          <h2 id="snapshot-title"><span data-l="en">At a glance</span><span data-l="pt">Em resumo</span></h2>
+          <p class="updated"><span data-l="en">Updated October 2026</span><span data-l="pt">Atualizado em outubro de 2026</span></p>
+        </div>
+        <dl class="facts-grid">
+          <div>
+            <dt><span data-l="en">Target roles</span><span data-l="pt">Vagas-alvo</span></dt>
+            <dd><span data-l="en">Senior Business Analyst · Product Owner</span><span data-l="pt">Analista de Negócios Sênior · Product Owner</span></dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Experience</span><span data-l="pt">Experiência</span></dt>
+            <dd><span data-l="en">4+ years in software delivery (since 2022), after 5 years as a teacher</span><span data-l="pt">4+ anos em entrega de software (desde 2022), após 5 anos como professor</span></dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Industries</span><span data-l="pt">Setores</span></dt>
+            <dd><span data-l="en">Capitalization, insurance, private pension, banking, telecom</span><span data-l="pt">Capitalização, seguros, previdência, bancos, telecom</span></dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Work model</span><span data-l="pt">Modelo</span></dt>
+            <dd><span data-l="en">100% remote · Brasília, Brazil (UTC−3)</span><span data-l="pt">100% remoto · Brasília, DF (UTC−3)</span></dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Languages</span><span data-l="pt">Idiomas</span></dt>
+            <dd><span data-l="en">Portuguese (native) · <span class="nw">English (C2, EF SET)</span></span><span data-l="pt">Português (nativo) · <span class="nw">Inglês (C2, EF SET)</span></span></dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Methods</span><span data-l="pt">Métodos</span></dt>
+            <dd><span data-l="en">Scrum, SAFe PIs, discovery, story mapping, UAT, hypercare</span><span data-l="pt">Scrum, PIs do SAFe, discovery, story mapping, UAT, hypercare</span></dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Tech context</span><span data-l="pt">Contexto técnico</span></dt>
+            <dd>REST APIs, BFF, Java, Angular, Mainframe COBOL, AWS, GCP</dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Tools</span><span data-l="pt">Ferramentas</span></dt>
+            <dd>Jira, Azure DevOps, Figma, Miro, Octane, Pega, Innoveo, Blip</dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Certifications</span><span data-l="pt">Certificações</span></dt>
+            <dd>Pega PCBA · <span class="nw">Innoveo BA &amp; Architect</span> · <span class="nw">AZ-900</span> · <span class="nw">AI-900</span> · SFPC</dd>
+          </div>
+          <div>
+            <dt><span data-l="en">Education</span><span data-l="pt">Formação</span></dt>
+            <dd><span data-l="en">Systems Analysis &amp; Development (tech degree) · B.A., University of Brasília · MBA in AI for Business (in progress)</span><span data-l="pt">Tecnólogo em ADS · Bacharelado pela UnB · MBA em IA para Negócios (em andamento)</span></dd>
+          </div>
+        </dl>
+        <div class="snapshot-actions">
+          <a class="btn btn-solid" data-l="en" href="cv/Tomas-Antonio-CV-EN.pdf" download>Download CV</a>
+          <a class="btn btn-solid" data-l="pt" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download>Baixar currículo</a>
+          <button class="btn btn-outline" type="button" data-copy="tomasleones@gmail.com">
+            <span class="copy-label"><span data-l="en">Copy e-mail</span><span data-l="pt">Copiar e-mail</span></span>
+            <span class="copied-label"><span data-l="en">E-mail copied</span><span data-l="pt">E-mail copiado</span></span>
+          </button>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/tmslns" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="how">
+  <section class="block" id="work">
     <div class="wrap">
-      <p class="kicker"><span data-l="en">How I work</span><span data-l="pt">Como trabalho</span></p>
-      <h2><span data-l="en">The link between business and engineering</span><span data-l="pt">O elo entre negócio e engenharia</span></h2>
+      <p class="kicker"><span data-l="en">Selected work</span><span data-l="pt">Cases</span></p>
+      <h2><span data-l="en">Problems I have helped solve</span><span data-l="pt">Problemas que ajudei a resolver</span></h2>
       <p class="section-intro">
-        <span data-l="en">I spent five years as a teacher before moving into tech. Explaining dense ideas to very different audiences is still the core of my job: I translate what executives, regulators and operations need into something developers can build and testers can verify.</span>
-        <span data-l="pt">Fui professor por cinco anos antes de migrar para tecnologia. Explicar ideias densas para públicos muito diferentes continua sendo o centro do meu trabalho: traduzo o que diretoria, reguladores e operação precisam em algo que o desenvolvedor consegue construir e o testador consegue verificar.</span>
+        <span data-l="en">Filter by what your role needs. Client work is described at the level I can share publicly.</span>
+        <span data-l="pt">Filtre pelo que a sua vaga pede. Os trabalhos para clientes estão descritos no nível que posso compartilhar publicamente.</span>
       </p>
-      <div class="grid three">
-        <article class="card">
-          <span class="num">01</span>
-          <h3><span data-l="en">Clarity before code</span><span data-l="pt">Clareza antes do código</span></h3>
-          <p><span data-l="en">Every story leaves refinement with its business rule, data contract and acceptance criteria written down. Nobody should have to guess.</span><span data-l="pt">Toda história sai do refinamento com regra de negócio, contrato de dados e critérios de aceite escritos. Ninguém precisa adivinhar.</span></p>
+
+      <div class="filters" role="group" aria-label="Filter cases">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true"><span data-l="en">All</span><span data-l="pt">Todos</span> <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="fin" aria-pressed="false"><span data-l="en">Financial services</span><span data-l="pt">Serviços financeiros</span> <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="reg" aria-pressed="false"><span data-l="en">Regulatory &amp; compliance</span><span data-l="pt">Regulatório e compliance</span> <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="legacy" aria-pressed="false"><span data-l="en">Mainframe &amp; legacy</span><span data-l="pt">Mainframe e legado</span> <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="api" aria-pressed="false"><span data-l="en">APIs &amp; integrations</span><span data-l="pt">APIs e integrações</span> <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="pega" aria-pressed="false">Pega <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="lowcode" aria-pressed="false">Low-code <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="ai" aria-pressed="false"><span data-l="en">AI</span><span data-l="pt">IA</span> <span class="count"></span></button>
+        <button class="filter" type="button" data-filter="cloud" aria-pressed="false"><span data-l="en">Cloud &amp; DevOps</span><span data-l="pt">Nuvem e DevOps</span> <span class="count"></span></button>
+      </div>
+      <p class="filter-status" id="filter-status" aria-live="polite"></p>
+
+      <div class="grid two" id="case-grid">
+        <article class="card case" data-tags="fin reg legacy">
+          <span class="tag"><span data-l="en">Capitalization · Regulatory · Current</span><span data-l="pt">Capitalização · Regulatório · Atual</span></span>
+          <h3><span data-l="en">Regulatory delivery with a Java and COBOL squad</span><span data-l="pt">Entregas regulatórias com uma squad Java e COBOL</span></h3>
+          <p class="meta">GFT · 2026 – <span data-l="en">now</span><span data-l="pt">hoje</span> · <b><span data-l="en">Business Analyst</span><span data-l="pt">Analista de Negócios</span></b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">A financial institution in the capitalization sector must meet regulatory requirements, such as Resolution 12 (Núclea), while running digital transformation workstreams with many stakeholders.</span><span data-l="pt">Uma instituição financeira de capitalização precisa cumprir exigências regulatórias, como a Resolução 12 (Núclea), enquanto toca frentes de transformação digital com muitos stakeholders.</span></dd>
+            <dt><span data-l="en">What I do</span><span data-l="pt">O que faço</span></dt>
+            <dd><span data-l="en">Turn each rule into functional specs, stories and acceptance criteria; assess impact on core systems; refine with Java back-end and Mainframe COBOL developers; keep scope aligned across business areas and IT.</span><span data-l="pt">Transformo cada regra em especificação funcional, histórias e critérios de aceite; avalio impacto nos sistemas core; refino com devs back-end Java e Mainframe COBOL; mantenho o escopo alinhado entre negócio e TI.</span></dd>
+          </dl>
+          <div class="chips"><span>Java</span><span>Mainframe COBOL</span><span>Jira / Azure DevOps</span><span data-l="en">Stakeholder management</span><span data-l="pt">Gestão de stakeholders</span></div>
         </article>
-        <article class="card">
-          <span class="num">02</span>
-          <h3><span data-l="en">Rules apart from design</span><span data-l="pt">Regra separada do desenho técnico</span></h3>
-          <p><span data-l="en">I keep the "what" and "why" apart from the "how", so a regulatory rule never gets lost inside an architecture decision.</span><span data-l="pt">Separo o "o quê" e o "porquê" do "como", para que uma regra regulatória nunca se perca dentro de uma decisão de arquitetura.</span></p>
+
+        <article class="card case" data-tags="fin api">
+          <span class="tag"><span data-l="en">Investments · APIs</span><span data-l="pt">Investimentos · APIs</span></span>
+          <h3><span data-l="en">Fund Comparator replacing a legacy system</span><span data-l="pt">Comparador de Fundos no lugar de um sistema legado</span></h3>
+          <p class="meta">GFT · 2026 · <b><span data-l="en">Business Analyst / PO</span><span data-l="pt">Analista de Negócios / PO</span></b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">An insurance and pension company needed to replace the legacy Quantum system in its manager portal, and business teams opened IT tickets for every data load or parameter change.</span><span data-l="pt">Uma seguradora e previdência precisava substituir o sistema legado Quantum no portal do gestor, e as áreas de negócio abriam chamados para a TI a cada carga de dados ou mudança de parâmetro.</span></dd>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Specified the SmartBrain API integration and led refinement of the BFF routines and front-end components for returns, volatility charts and Sharpe-ratio matrices. Specified a self-service parametrization screen.</span><span data-l="pt">Especifiquei a integração com as APIs da SmartBrain e liderei o refinamento das rotinas BFF e dos componentes de front-end de rentabilidade, gráficos de volatilidade e matrizes de Sharpe. Especifiquei uma tela de parametrização self-service.</span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">Business teams set data loads and parameters on their own, without IT tickets.</span><span data-l="pt">O negócio passa a configurar cargas e parâmetros sozinho, sem chamados para a TI.</span></dd>
+          </dl>
+          <div class="chips"><span>REST APIs</span><span>BFF</span><span>Angular</span><span>JSON</span><span>Self-service</span></div>
         </article>
-        <article class="card">
-          <span class="num">03</span>
-          <h3><span data-l="en">Modern meets legacy</span><span data-l="pt">Moderno encontra legado</span></h3>
-          <p><span data-l="en">APIs, BFF and cloud on one side, Mainframe COBOL on the other. I map where data and rules cross between them.</span><span data-l="pt">APIs, BFF e nuvem de um lado, Mainframe COBOL do outro. Mapeio onde dados e regras cruzam essa fronteira.</span></p>
+
+        <article class="card case" data-tags="fin legacy">
+          <span class="tag"><span data-l="en">Private pension · Mainframe</span><span data-l="pt">Previdência · Mainframe</span></span>
+          <h3><span data-l="en">Pension goals without a mandatory certificate</span><span data-l="pt">Objetivos de previdência sem certificado obrigatório</span></h3>
+          <p class="meta">GFT · 2026 · <b><span data-l="en">Business Analyst / PO</span><span data-l="pt">Analista de Negócios / PO</span></b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">Every pension goal had to be tied to a certificate in the Mainframe, creating a transactional bottleneck and split journeys.</span><span data-l="pt">Todo objetivo de previdência precisava estar atrelado a um certificado no Mainframe, o que gerava gargalo transacional e jornadas separadas.</span></dd>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Designed the functional decoupling so customers create a goal first and link a certificate later.</span><span data-l="pt">Desenhei o desacoplamento funcional para que o cliente crie o objetivo primeiro e atrele o certificado depois.</span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">Mitigated the Mainframe bottleneck and unified the journeys.</span><span data-l="pt">Gargalo no Mainframe mitigado e jornadas unificadas.</span></dd>
+          </dl>
+          <div class="chips"><span>COBOL</span><span>Mainframe</span><span data-l="en">Journey design</span><span data-l="pt">Desenho de jornada</span></div>
         </article>
-        <article class="card">
-          <span class="num">04</span>
-          <h3><span data-l="en">Unblock the team</span><span data-l="pt">Desenrolar o time</span></h3>
-          <p><span data-l="en">Journey maps in Miro, quick prototypes in Figma and a direct line to the right stakeholder, so developers spend their time building.</span><span data-l="pt">Jornadas no Miro, protótipos rápidos no Figma e uma ponte direta com o stakeholder certo, para o time gastar o tempo construindo.</span></p>
+
+        <article class="card case wide" data-tags="pega">
+          <span class="tag"><span data-l="en">Infrastructure · Pega Constellation · Highlight</span><span data-l="pt">Infraestrutura · Pega Constellation · Destaque</span></span>
+          <h3><span data-l="en">Data center lifecycle workflow, FEL-1 to FEL-5</span><span data-l="pt">Workflow do ciclo de vida de data centers, FEL-1 a FEL-5</span></h3>
+          <p class="meta">GFT · 2024 – 2025 · <b>Product Owner &amp; System Architect</b></p>
+          <div class="case-body">
+            <dl>
+              <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+              <dd><span data-l="en">Prospecting and building data centers ran on e-mail threads across five project phases, with no single record of decisions.</span><span data-l="pt">A prospecção e as obras de data centers corriam por e-mail ao longo de cinco fases de projeto, sem um registro único das decisões.</span></dd>
+              <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+              <dd><span data-l="en">Ran discovery, mapped the business processes in Miro, validated the journey with high-fidelity Figma prototypes, structured epics, features and stories with acceptance criteria in Azure DevOps, kept the Pega Constellation solution sound and facilitated the Scrum ceremonies. After go-live, led hypercare.</span><span data-l="pt">Conduzi o discovery, mapeei os processos de negócio no Miro, validei a jornada com protótipos de alta fidelidade no Figma, estruturei épicos, features e histórias com critérios de aceite no Azure DevOps, garanti a integridade da solução em Pega Constellation e facilitei os ritos Scrum. Após o go-live, liderei o hypercare.</span></dd>
+              <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+              <dd class="outcome"><span data-l="en">Every project decision traceable in one platform instead of e-mail.</span><span data-l="pt">Todas as decisões do projeto rastreáveis em uma única plataforma, e não mais no e-mail.</span></dd>
+            </dl>
+            <div class="metrics">
+              <div class="metric"><b>222</b><span data-l="en">business processes mapped in 15 days</span><span data-l="pt">processos de negócio mapeados em 15 dias</span></div>
+              <div class="metric"><b>200</b><span data-l="en">story points delivered in 4 sprints</span><span data-l="pt">pontos entregues em 4 sprints</span></div>
+              <div class="metric"><b>70</b><span data-l="en">change requests prioritized in hypercare</span><span data-l="pt">solicitações de mudança priorizadas no hypercare</span></div>
+              <div class="metric"><b>5</b><span data-l="en">project phases in one platform</span><span data-l="pt">fases de projeto em uma plataforma</span></div>
+            </div>
+          </div>
+          <div class="chips"><span>Pega Constellation</span><span>Azure DevOps</span><span>Miro</span><span>Figma</span><span>Scrum</span></div>
         </article>
-        <article class="card">
-          <span class="num">05</span>
-          <h3><span data-l="en">Build to learn</span><span data-l="pt">Construir para aprender</span></h3>
-          <p><span data-l="en">As a citizen developer on Innoveo, Blip and Pega, I shipped MVPs myself. It made my specs more concrete and my estimates more honest.</span><span data-l="pt">Como citizen developer em Innoveo, Blip e Pega, entreguei MVPs com as minhas mãos. Isso deixou minhas especificações mais concretas e minhas estimativas mais honestas.</span></p>
+
+        <article class="card case" data-tags="fin pega api cloud">
+          <span class="tag"><span data-l="en">Banking · Pega · DevOps</span><span data-l="pt">Bancário · Pega · DevOps</span></span>
+          <h3><span data-l="en">Internal service portal for a bank</span><span data-l="pt">Portal de serviços interno para um banco</span></h3>
+          <p class="meta">GFT · 2024 – 2025 · <b>Product Owner, Scrum Master &amp; UX</b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">Scattered internal processes needed one service portal, with Pega as the core orchestrator.</span><span data-l="pt">Processos internos dispersos precisavam de um portal de serviços único, com o Pega como orquestrador central.</span></dd>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Designed a Configure → Build → Run workflow that orchestrates Jira issues, CI/CD, DBT and change management steps, with e-mail notifications, SLAs, rule-based routing, execution reports and JSON data export to the bank's GCP.</span><span data-l="pt">Desenhei um workflow de Configuração → Construção → Execução que orquestra issues do Jira, CI/CD, DBT e GMUD, com notificações por e-mail, SLAs, roteamento por regras, relatórios de execução e envio de dados em JSON para o GCP do banco.</span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">Weekly status workshops gave stakeholders visibility throughout the MVP. I earned the Pega PCBA certification on this project.</span><span data-l="pt">Workshops semanais de status deram visibilidade aos stakeholders durante todo o MVP. Conquistei a certificação Pega PCBA neste projeto.</span></dd>
+          </dl>
+          <div class="chips"><span>Pega</span><span>GCP</span><span>JSON</span><span>CI/CD</span><span>Miro</span><span>Figma</span></div>
         </article>
-        <article class="card">
-          <span class="num">06</span>
-          <h3><span data-l="en">AI-assisted, human-checked</span><span data-l="pt">IA acelera, pessoa valida</span></h3>
-          <p><span data-l="en">I use AI assistants to draft specs, map payloads and prototype faster. A person reviews and signs off on what ships.</span><span data-l="pt">Uso assistentes de IA para rascunhar especificações, mapear payloads e prototipar mais rápido. Uma pessoa revisa e aprova o que vai para produção.</span></p>
+
+        <article class="card case" data-tags="pega reg api">
+          <span class="tag"><span data-l="en">Telecom · B2B · Compliance</span><span data-l="pt">Telecom · B2B · Compliance</span></span>
+          <h3><span data-l="en">Self-service portal for a telecom operator</span><span data-l="pt">Portal de autosserviço para uma operadora de telecom</span></h3>
+          <p class="meta">GFT · 2024 – 2025 · <b><span data-l="en">Product Owner, Business Architect &amp; UX</span><span data-l="pt">Product Owner, Arquiteto de Negócios e UX</span></b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">B2B operations and technical support needed one self-service channel, including reports for a government regulator's auditors.</span><span data-l="pt">Operações B2B e suporte técnico precisavam de um canal único de autosserviço, incluindo relatórios para auditores da agência reguladora.</span></dd>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Journeys for customers, sales executives and regulatory auditors; story maps for requesting a service, downloading activation reports and cancelling work orders; Lead-to-Cash with Salesforce and SAP integration; Troubleshoot-to-Resolve triage for N2/N3 support; audit reports (.xls, .pdf) served from GCP.</span><span data-l="pt">Jornadas para cliente, executivo de vendas e auditor da agência reguladora; story mapping de "Solicitar novo serviço", "Baixar relatórios de ativação" e "Cancelamento de OS"; Lead-to-Cash com integração Salesforce e SAP; triagem Troubleshoot-to-Resolve para suporte N2/N3; relatórios de auditoria (.xls, .pdf) servidos pelo GCP.</span></dd>
+          </dl>
+          <div class="chips"><span>Pega</span><span>Story mapping</span><span>Salesforce / SAP</span><span>GCP</span><span>Figma</span></div>
+        </article>
+
+        <article class="card case" data-tags="fin pega ai">
+          <span class="tag"><span data-l="en">Banking · Credit</span><span data-l="pt">Bancário · Crédito</span></span>
+          <h3><span data-l="en">Wholesale credit request application</span><span data-l="pt">Aplicação de solicitação de crédito atacado</span></h3>
+          <p class="meta">GFT · 2024 – 2025 · <b>Pega Business Architect &amp; UX</b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">A bank's credit analysis journey needed a high volume of detailed user stories for the Scrum team.</span><span data-l="pt">A jornada de análise de crédito de um banco exigia um grande volume de histórias de usuário detalhadas para o time Scrum.</span></dd>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Figma prototypes and detailed Jira user stories, refined with the team. <a href="#story">See a sample story ↓</a></span><span data-l="pt">Protótipos no Figma e histórias de usuário detalhadas no Jira, refinadas com o time. <a href="#story">Veja uma história de exemplo ↓</a></span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">Generative AI sped up story writing and led me to the Microsoft AI-900 certification.</span><span data-l="pt">A IA generativa acelerou a escrita das histórias e me levou à certificação Microsoft AI-900.</span></dd>
+          </dl>
+          <div class="chips"><span>Pega</span><span>Figma</span><span>Jira</span><span data-l="en">Generative AI</span><span data-l="pt">IA generativa</span></div>
+        </article>
+
+        <article class="card case" data-tags="fin pega api">
+          <span class="tag"><span data-l="en">Bancassurance · Pega development</span><span data-l="pt">Seguros bancários · Desenvolvimento Pega</span></span>
+          <h3><span data-l="en">Insurance contracting flows on Pega 8.7</span><span data-l="pt">Fluxos de contratação de seguros no Pega 8.7</span></h3>
+          <p class="meta">GFT · 2024 – 2025 · <b>Pega System Architect</b></p>
+          <dl>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Case lifecycles for insurance contracting, data pages to consume external services, Cosmos UI, validation and visibility rules, decision tables and trees for policy eligibility, unit tests and guardrail compliance.</span><span data-l="pt">Ciclos de vida de casos para contratação de seguros, data pages para consumo de serviços externos, UI em Cosmos, regras de validação e visibilidade, tabelas e árvores de decisão para elegibilidade de apólices, testes unitários e aderência aos guardrails.</span></dd>
+          </dl>
+          <div class="chips"><span>Pega 8.7</span><span>Cosmos</span><span>Decision tables</span><span>Unit testing</span></div>
+        </article>
+
+        <article class="card case" data-tags="fin lowcode legacy">
+          <span class="tag"><span data-l="en">Pension · Legacy modernization</span><span data-l="pt">Previdência · Modernização de legado</span></span>
+          <h3><span data-l="en">Pension simulator rebuilt on low-code</span><span data-l="pt">Simulador de previdência reconstruído em low-code</span></h3>
+          <p class="meta">SIS Innov &amp; Tech · 2022 – 2024 · <b><span data-l="en">PO, Scrum Master &amp; builder</span><span data-l="pt">PO, Scrum Master e dev</span></b></p>
+          <dl>
+            <dt><span data-l="en">Challenge</span><span data-l="pt">Desafio</span></dt>
+            <dd><span data-l="en">A critical retirement simulator in production ran on Angular, Java and Mainframe.</span><span data-l="pt">Um simulador de aposentadoria crítico, em produção, rodava em Angular, Java e Mainframe.</span></dd>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Migrated it to Innoveo, using the technical pension spreadsheets as the blueprint, and turned the brand's identity kit into high-fidelity Figma prototypes. <a href="https://www.loom.com/share/82888d22a80143b1af7ab5ada6c05d07" target="_blank" rel="noopener">Watch the demo →</a></span><span data-l="pt">Migrei o simulador para o Innoveo usando as planilhas técnicas de previdência como base e traduzi o kit de identidade visual da marca em protótipos de alta fidelidade no Figma. <a href="https://www.loom.com/share/82888d22a80143b1af7ab5ada6c05d07" target="_blank" rel="noopener">Assista à demonstração →</a></span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">Full business-rule parity with the production system.</span><span data-l="pt">Paridade total das regras de negócio com o sistema em produção.</span></dd>
+          </dl>
+          <div class="chips"><span>Innoveo</span><span>Figma</span><span>Scrum</span><span>Angular · Java · Mainframe</span></div>
+        </article>
+
+        <article class="card case" data-tags="fin lowcode">
+          <span class="tag"><span data-l="en">Insurance · Low-code</span><span data-l="pt">Seguros · Low-code</span></span>
+          <h3><span data-l="en">Life insurance MVP in under two weeks</span><span data-l="pt">MVP de seguro de vida em menos de duas semanas</span></h3>
+          <p class="meta">SIS Innov &amp; Tech · 2022 – 2024 · <b><span data-l="en">BA &amp; low-code developer</span><span data-l="pt">AN e dev low-code</span></b></p>
+          <dl>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Orchestrated and built a competitive life insurance MVP on the Innoveo low-code platform.</span><span data-l="pt">Orquestrei e construí um MVP competitivo de seguro de vida na plataforma low-code Innoveo.</span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">A working product in under two weeks to test market hypotheses.</span><span data-l="pt">Um produto funcionando em menos de duas semanas para testar hipóteses de mercado.</span></dd>
+          </dl>
+          <div class="chips"><span>Innoveo</span><span>MVP</span><span>Citizen developer</span></div>
+        </article>
+
+        <article class="card case" data-tags="lowcode ai">
+          <span class="tag"><span data-l="en">Conversational AI · Partnerships</span><span data-l="pt">IA conversacional · Parcerias</span></span>
+          <h3><span data-l="en">Official Blip partnership and chatbot migration</span><span data-l="pt">Parceria oficial Blip e migração de chatbot</span></h3>
+          <p class="meta">SIS Innov &amp; Tech · 2022 – 2024 · <b><span data-l="en">PO, Scrum Master &amp; developer</span><span data-l="pt">PO, Scrum Master e dev</span></b></p>
+          <dl>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Led the study and accreditation for the Blip partnership. Then migrated a real client's chatbot from Zenvia to Blip: regex validations, rule-based routing, SLAs for human handoff in Blip Desk, input and output tracking for usage reports, and a tailored onboarding guide.</span><span data-l="pt">Liderei o estudo e o credenciamento da parceria Blip. Depois, migrei o chatbot de um cliente real da Zenvia para a Blip: validações com regex, redirecionamento por regras de negócio, SLA para atendimento humano no Blip Desk, trackeamento de inputs e outputs para relatórios de uso e um material de onboarding personalizado.</span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">The consultancy became an official Blip partner, opening a new line of business.</span><span data-l="pt">A consultoria se tornou parceira oficial Blip, abrindo uma nova frente comercial.</span></dd>
+          </dl>
+          <div class="chips"><span>Blip</span><span>Blip Desk</span><span>Regex</span><span data-l="en">Data tracking</span><span data-l="pt">Trackeamento de dados</span></div>
+        </article>
+
+        <article class="card case" data-tags="cloud">
+          <span class="tag"><span data-l="en">Cloud · DevOps</span><span data-l="pt">Nuvem · DevOps</span></span>
+          <h3><span data-l="en">Containerized simulation platform on AWS</span><span data-l="pt">Plataforma de simulação conteinerizada na AWS</span></h3>
+          <p class="meta">SIS Innov &amp; Tech · 2022 – 2024 · <b><span data-l="en">Technical Product Owner</span><span data-l="pt">PO técnico</span></b></p>
+          <dl>
+            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
+            <dd><span data-l="en">Led a high-concurrency simulation service: Docker containers on AWS EC2 with automated build, rebuild and restart pipelines versioned on GitHub.</span><span data-l="pt">Liderei um serviço de simulação de alta concorrência: contêineres Docker na AWS EC2 com pipelines automáticos de build, rebuild e restart versionados no GitHub.</span></dd>
+            <dt><span data-l="en">Outcome</span><span data-l="pt">Resultado</span></dt>
+            <dd class="outcome"><span data-l="en">Resilient processing of simulation requests, with automatic recovery.</span><span data-l="pt">Processamento resiliente das simulações, com recuperação automática.</span></dd>
+          </dl>
+          <div class="chips"><span>AWS EC2</span><span>Docker</span><span>GitHub</span></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="block" id="journey">
+  <section class="block" id="story">
     <div class="wrap">
-      <p class="kicker"><span data-l="en">Journey</span><span data-l="pt">Trajetória</span></p>
+      <p class="kicker"><span data-l="en">Craft</span><span data-l="pt">Na prática</span></p>
+      <h2><span data-l="en">How I write a user story</span><span data-l="pt">Como escrevo uma história de usuário</span></h2>
+      <p class="section-intro">
+        <span data-l="en">An abridged story from the wholesale credit application, with client data removed. Navigation, display rules, validation and actions are all spelled out, so development and QA read the same thing.</span>
+        <span data-l="pt">Uma história resumida da aplicação de crédito atacado, sem dados do cliente. Navegação, regras de exibição, validações e ações ficam explícitas, para que desenvolvimento e QA leiam a mesma coisa.</span>
+      </p>
+      <article class="card story">
+        <p class="story-title">US · <span data-l="en">Client registration and rating</span><span data-l="pt">Cadastro do cliente e rating</span></p>
+        <p class="story-statement" data-l="en"><b>As a</b> credit analyst, <b>I want</b> to fill in and review the client's registration and rating data, <b>so that</b> the proposal's core information is consolidated before the financial analysis.</p>
+        <p class="story-statement" data-l="pt"><b>Como</b> analista de crédito, <b>eu quero</b> preencher e revisar os dados cadastrais e de rating do cliente, <b>para que</b> as informações fundamentais da proposta estejam consolidadas antes da análise financeira.</p>
+        <ol class="ac" data-l="en">
+          <li><b>Navigation and context.</b> Breadcrumb "Service queue / New credit analysis"; the stepper shows "Registration data" as active; an accordion shows the service ID and the client or group name.</li>
+          <li><b>Rating.</b> Toggle "Update the rating?". When on, Suggested rating, Calculated rating and Base date (MM/YYYY) become editable.</li>
+          <li><b>International rating grid.</b> Columns Agency (Fitch, S&amp;P…), Grade, Date, Outlook and Classification; "Add" inserts a row and each row has a delete icon.</li>
+          <li><b>Notes.</b> Free text up to 1,000 characters with a live "characters left" counter.</li>
+          <li><b>Validation and actions.</b> Required fields (*) are validated on "Continue". Cancel returns to the queue without saving; Save &amp; close keeps the data; Continue validates and moves to the next step.</li>
+          <li><b>Non-functional.</b> Follows the Figma design system, fits the Pega workspace with the side menu visible, has clear labels and works with keyboard navigation.</li>
+        </ol>
+        <ol class="ac" data-l="pt">
+          <li><b>Navegação e contexto.</b> Breadcrumb "Pauta de serviços / Nova análise de crédito"; o stepper indica "Dados cadastrais" como etapa ativa; um accordion exibe o ID do serviço e o nome do cliente ou grupo.</li>
+          <li><b>Rating.</b> Chave "Deseja atualizar o Rating?". Quando ativa, Rating sugerido, Rating calculado e Data base (MM/AAAA) ficam editáveis.</li>
+          <li><b>Grade de rating internacional.</b> Colunas Agência (Fitch, S&amp;P…), Nota, Data, Outlook e Classificação; "Adicionar" insere linha e cada linha tem ícone de exclusão.</li>
+          <li><b>Observações.</b> Texto livre de até 1.000 caracteres, com contador dinâmico de caracteres restantes.</li>
+          <li><b>Validação e ações.</b> Campos obrigatórios (*) são validados ao clicar em "Continuar". Cancelar volta à pauta sem salvar; Salvar &amp; fechar persiste os dados; Continuar valida e avança para a próxima etapa.</li>
+          <li><b>Não funcionais.</b> Segue o design system do Figma, se ajusta à área de trabalho do Pega com o menu lateral acessível, tem rótulos claros e navegação por teclado.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <p class="kicker"><span data-l="en">Experience</span><span data-l="pt">Experiência</span></p>
       <h2><span data-l="en">From the classroom to financial systems</span><span data-l="pt">Da sala de aula aos sistemas financeiros</span></h2>
       <p class="section-intro">
         <span data-l="en">Each step added a layer: communication, then building, then architecture, then product ownership in regulated industries.</span>
@@ -365,192 +718,53 @@
           </p>
         </li>
       </ol>
+      <p class="more">
+        <a data-l="en" href="cv/Tomas-Antonio-CV-EN.pdf" download>Full details in the CV (PDF) →</a>
+        <a data-l="pt" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download>Detalhes completos no currículo (PDF) →</a>
+      </p>
     </div>
   </section>
 
-  <section class="block" id="cases">
+  <section class="block" id="how">
     <div class="wrap">
-      <p class="kicker"><span data-l="en">Selected work</span><span data-l="pt">Cases</span></p>
-      <h2><span data-l="en">Problems I have helped solve</span><span data-l="pt">Problemas que ajudei a resolver</span></h2>
+      <p class="kicker"><span data-l="en">How I work</span><span data-l="pt">Como trabalho</span></p>
+      <h2><span data-l="en">The link between business and engineering</span><span data-l="pt">O elo entre negócio e engenharia</span></h2>
       <p class="section-intro">
-        <span data-l="en">Client work is described at the level I can share publicly.</span>
-        <span data-l="pt">Os trabalhos para clientes estão descritos no nível que posso compartilhar publicamente.</span>
+        <span data-l="en">I spent five years as a teacher before moving into tech. Explaining dense ideas to very different audiences is still the core of my job: I translate what executives, regulators and operations need into something developers can build and testers can verify.</span>
+        <span data-l="pt">Fui professor por cinco anos antes de migrar para tecnologia. Explicar ideias densas para públicos muito diferentes continua sendo o centro do meu trabalho: traduzo o que diretoria, reguladores e operação precisam em algo que o desenvolvedor consegue construir e o testador consegue verificar.</span>
       </p>
-      <div class="grid two">
-        <article class="card case">
-          <span class="tag"><span data-l="en">Capitalization · Regulatory · Current</span><span data-l="pt">Capitalização · Regulatório · Atual</span></span>
-          <h3><span data-l="en">Regulatory delivery with a Java and COBOL squad</span><span data-l="pt">Entregas regulatórias com uma squad Java e COBOL</span></h3>
-          <dl>
-            <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-            <dd><span data-l="en">A financial institution in the capitalization sector must meet regulatory requirements, such as Resolution 12 (Núclea), while running digital transformation workstreams with many stakeholders.</span><span data-l="pt">Uma instituição financeira de capitalização precisa cumprir exigências regulatórias, como a Resolução 12 (Núclea), enquanto toca frentes de transformação digital com muitos stakeholders.</span></dd>
-            <dt><span data-l="en">What I do</span><span data-l="pt">O que faço</span></dt>
-            <dd><span data-l="en">Turn each rule into functional specs, stories and acceptance criteria; assess impact on core systems; refine with Java back-end and Mainframe COBOL developers; keep scope aligned across business areas and IT.</span><span data-l="pt">Transformo cada regra em especificação funcional, histórias e critérios de aceite; avalio impacto nos sistemas core; refino com devs back-end Java e Mainframe COBOL; mantenho o escopo alinhado entre negócio e TI.</span></dd>
-          </dl>
-          <div class="chips"><span>Java</span><span>Mainframe COBOL</span><span>Jira / Azure DevOps</span><span data-l="en">Stakeholder management</span><span data-l="pt">Gestão de stakeholders</span></div>
+      <div class="grid three">
+        <article class="card">
+          <span class="num">01</span>
+          <h3><span data-l="en">Clarity before code</span><span data-l="pt">Clareza antes do código</span></h3>
+          <p><span data-l="en">Every story leaves refinement with its business rule, data contract and acceptance criteria written down. Nobody should have to guess.</span><span data-l="pt">Toda história sai do refinamento com regra de negócio, contrato de dados e critérios de aceite escritos. Ninguém precisa adivinhar.</span></p>
         </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Investments · APIs</span><span data-l="pt">Investimentos · APIs</span></span>
-          <h3><span data-l="en">Fund Comparator replacing a legacy system</span><span data-l="pt">Comparador de Fundos no lugar de um sistema legado</span></h3>
-          <dl>
-            <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-            <dd><span data-l="en">An insurance and pension company needed to replace the legacy Quantum system in its manager portal.</span><span data-l="pt">Uma seguradora e previdência precisava substituir o sistema legado Quantum no seu portal do gestor.</span></dd>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Specified the SmartBrain API integration and led refinement of the BFF routines and front-end components that load returns, volatility charts and Sharpe-ratio matrices. Also specified a self-service screen so the business sets data loads and parameters without opening IT tickets.</span><span data-l="pt">Especifiquei a integração com as APIs da SmartBrain e liderei o refinamento das rotinas BFF e dos componentes de front-end de rentabilidade, gráficos de volatilidade e matrizes de Sharpe. Também especifiquei uma tela self-service para o negócio configurar cargas e parâmetros sem abrir chamados para a TI.</span></dd>
-          </dl>
-          <div class="chips"><span>REST APIs</span><span>BFF</span><span>Angular</span><span>JSON</span><span>Self-service</span></div>
+        <article class="card">
+          <span class="num">02</span>
+          <h3><span data-l="en">Rules apart from design</span><span data-l="pt">Regra separada do desenho técnico</span></h3>
+          <p><span data-l="en">I keep the "what" and "why" apart from the "how", so a regulatory rule never gets lost inside an architecture decision.</span><span data-l="pt">Separo o "o quê" e o "porquê" do "como", para que uma regra regulatória nunca se perca dentro de uma decisão de arquitetura.</span></p>
         </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Private pension · Mainframe</span><span data-l="pt">Previdência · Mainframe</span></span>
-          <h3><span data-l="en">Pension goals without a mandatory certificate</span><span data-l="pt">Objetivos de previdência sem certificado obrigatório</span></h3>
-          <dl>
-            <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-            <dd><span data-l="en">Every pension goal had to be tied to a certificate in the Mainframe, creating a transactional bottleneck and split journeys.</span><span data-l="pt">Todo objetivo de previdência precisava estar atrelado a um certificado no Mainframe, o que gerava gargalo transacional e jornadas separadas.</span></dd>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Designed the functional decoupling so customers can create a goal first and link a certificate later, unifying the journeys.</span><span data-l="pt">Desenhei o desacoplamento funcional para que o cliente crie o objetivo primeiro e atrele o certificado depois, unificando as jornadas.</span></dd>
-          </dl>
-          <div class="chips"><span>COBOL</span><span>Mainframe</span><span data-l="en">Journey design</span><span data-l="pt">Desenho de jornada</span></div>
+        <article class="card">
+          <span class="num">03</span>
+          <h3><span data-l="en">Modern meets legacy</span><span data-l="pt">Moderno encontra legado</span></h3>
+          <p><span data-l="en">APIs, BFF and cloud on one side, Mainframe COBOL on the other. I map where data and rules cross between them.</span><span data-l="pt">APIs, BFF e nuvem de um lado, Mainframe COBOL do outro. Mapeio onde dados e regras cruzam essa fronteira.</span></p>
         </article>
-
-        <article class="card case wide">
-          <span class="tag"><span data-l="en">Infrastructure · Pega Constellation · Highlight</span><span data-l="pt">Infraestrutura · Pega Constellation · Destaque</span></span>
-          <h3><span data-l="en">Data center lifecycle workflow, FEL-1 to FEL-5</span><span data-l="pt">Workflow do ciclo de vida de data centers, FEL-1 a FEL-5</span></h3>
-          <div class="case-body">
-            <dl>
-              <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-              <dd><span data-l="en">Prospecting and building data centers ran on e-mail threads across five project phases, with no single record of decisions.</span><span data-l="pt">A prospecção e as obras de data centers corriam por e-mail ao longo de cinco fases de projeto, sem um registro único das decisões.</span></dd>
-              <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-              <dd><span data-l="en">Product Owner and System Architect. Ran discovery, mapped the business processes in Miro, validated the journey with high-fidelity Figma prototypes, structured epics, features and stories with acceptance criteria in Azure DevOps, kept the Pega Constellation solution sound and facilitated the Scrum ceremonies. After go-live, led hypercare, with every project decision traceable in one platform.</span><span data-l="pt">Product Owner e System Architect. Conduzi o discovery, mapeei os processos de negócio no Miro, validei a jornada com protótipos de alta fidelidade no Figma, estruturei épicos, features e histórias com critérios de aceite no Azure DevOps, garanti a integridade da solução em Pega Constellation e facilitei os ritos Scrum. Após o go-live, liderei o hypercare, com todas as decisões do projeto rastreáveis em uma única plataforma.</span></dd>
-            </dl>
-            <div class="metrics">
-              <div class="metric"><b>222</b><span data-l="en">business processes mapped in 15 days</span><span data-l="pt">processos de negócio mapeados em 15 dias</span></div>
-              <div class="metric"><b>200</b><span data-l="en">story points delivered in 4 sprints</span><span data-l="pt">pontos entregues em 4 sprints</span></div>
-              <div class="metric"><b>70</b><span data-l="en">change requests prioritized in hypercare</span><span data-l="pt">solicitações de mudança priorizadas no hypercare</span></div>
-              <div class="metric"><b>5</b><span data-l="en">project phases in one platform, not e-mail</span><span data-l="pt">fases de projeto em uma plataforma, não no e-mail</span></div>
-            </div>
-          </div>
-          <div class="chips"><span>Pega Constellation</span><span>Azure DevOps</span><span>Miro</span><span>Figma</span><span>Scrum</span></div>
+        <article class="card">
+          <span class="num">04</span>
+          <h3><span data-l="en">Unblock the team</span><span data-l="pt">Desenrolar o time</span></h3>
+          <p><span data-l="en">Journey maps in Miro, quick prototypes in Figma and a direct line to the right stakeholder, so developers spend their time building.</span><span data-l="pt">Jornadas no Miro, protótipos rápidos no Figma e uma ponte direta com o stakeholder certo, para o time gastar o tempo construindo.</span></p>
         </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Banking · Pega · DevOps</span><span data-l="pt">Bancário · Pega · DevOps</span></span>
-          <h3><span data-l="en">Internal service portal for a bank</span><span data-l="pt">Portal de serviços interno para um banco</span></h3>
-          <dl>
-            <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-            <dd><span data-l="en">Scattered internal processes needed one service portal, with Pega as the core orchestrator.</span><span data-l="pt">Processos internos dispersos precisavam de um portal de serviços único, com o Pega como orquestrador central.</span></dd>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Product Owner, Scrum Master and UX. Designed a Configure → Build → Run workflow that orchestrates Jira issues, CI/CD, DBT and change management steps, with e-mail notifications, SLAs, rule-based routing, execution reports and JSON data export to the bank's GCP. Led weekly status workshops with stakeholders through the MVP.</span><span data-l="pt">Product Owner, Scrum Master e UX. Desenhei um workflow de Configuração → Construção → Execução que orquestra issues do Jira, CI/CD, DBT e GMUD, com notificações por e-mail, SLAs, roteamento por regras, relatórios de execução e envio de dados em JSON para o GCP do banco. Conduzi workshops semanais de status report com os stakeholders ao longo do MVP.</span></dd>
-          </dl>
-          <div class="chips"><span>Pega</span><span>GCP</span><span>JSON</span><span>CI/CD</span><span>Miro</span><span>Figma</span></div>
+        <article class="card">
+          <span class="num">05</span>
+          <h3><span data-l="en">Build to learn</span><span data-l="pt">Construir para aprender</span></h3>
+          <p><span data-l="en">As a citizen developer on Innoveo, Blip and Pega, I shipped MVPs myself. It made my specs more concrete and my estimates more honest.</span><span data-l="pt">Como citizen developer em Innoveo, Blip e Pega, entreguei MVPs com as minhas mãos. Isso deixou minhas especificações mais concretas e minhas estimativas mais honestas.</span></p>
         </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Telecom · B2B · Compliance</span><span data-l="pt">Telecom · B2B · Compliance</span></span>
-          <h3><span data-l="en">Self-service portal for a telecom operator</span><span data-l="pt">Portal de autosserviço para uma operadora de telecom</span></h3>
-          <dl>
-            <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-            <dd><span data-l="en">B2B operations and technical support needed one self-service channel, including reports for a government regulator's auditors.</span><span data-l="pt">Operações B2B e suporte técnico precisavam de um canal único de autosserviço, incluindo relatórios para auditores da agência reguladora.</span></dd>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Product Owner, business architect and UX. Journeys for customers, sales executives and regulatory auditors; story maps for requesting a service, downloading activation reports and cancelling work orders; Lead-to-Cash with Salesforce and SAP integration; Troubleshoot-to-Resolve triage for N2/N3 support; audit reports (.xls, .pdf) served from GCP.</span><span data-l="pt">Product Owner, arquiteto de negócios e UX. Jornadas para cliente, executivo de vendas e auditor da agência reguladora; story mapping de "Solicitar novo serviço", "Baixar relatórios de ativação" e "Cancelamento de OS"; Lead-to-Cash com integração Salesforce e SAP; triagem Troubleshoot-to-Resolve para suporte N2/N3; relatórios de auditoria (.xls, .pdf) servidos pelo GCP.</span></dd>
-          </dl>
-          <div class="chips"><span>Pega</span><span>Story mapping</span><span>Salesforce / SAP</span><span>GCP</span><span>Figma</span></div>
-        </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Banking · Credit</span><span data-l="pt">Bancário · Crédito</span></span>
-          <h3><span data-l="en">Wholesale credit request application</span><span data-l="pt">Aplicação de solicitação de crédito atacado</span></h3>
-          <dl>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Pega business architect and UX designer for a bank's credit analysis journey: Figma prototypes and detailed Jira user stories, refined with the Scrum team. The volume of stories led me to use generative AI to write faster, and from there to the Microsoft AI-900 certification. <a href="#story">See a sample story ↓</a></span><span data-l="pt">Pega business architect e UX designer da jornada de análise de crédito de um banco: protótipos no Figma e histórias de usuário detalhadas no Jira, refinadas com o time Scrum. O volume de histórias me levou a usar IA generativa para escrever mais rápido e, daí, à certificação Microsoft AI-900. <a href="#story">Veja uma história de exemplo ↓</a></span></dd>
-          </dl>
-          <div class="chips"><span>Pega</span><span>Figma</span><span>Jira</span><span data-l="en">Generative AI</span><span data-l="pt">IA generativa</span></div>
-        </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Bancassurance · Pega development</span><span data-l="pt">Seguros bancários · Desenvolvimento Pega</span></span>
-          <h3><span data-l="en">Insurance contracting flows on Pega 8.7</span><span data-l="pt">Fluxos de contratação de seguros no Pega 8.7</span></h3>
-          <dl>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">System Architect. Case lifecycles for insurance contracting, data pages to consume external services, Cosmos UI, validation and visibility rules, decision tables and trees for policy eligibility, unit tests and guardrail compliance.</span><span data-l="pt">System Architect. Ciclos de vida de casos para contratação de seguros, data pages para consumo de serviços externos, UI em Cosmos, regras de validação e visibilidade, tabelas e árvores de decisão para elegibilidade de apólices, testes unitários e aderência aos guardrails.</span></dd>
-          </dl>
-          <div class="chips"><span>Pega 8.7</span><span>Cosmos</span><span>Decision tables</span><span>Unit testing</span></div>
-        </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Pension · Legacy modernization</span><span data-l="pt">Previdência · Modernização de legado</span></span>
-          <h3><span data-l="en">Pension simulator rebuilt on low-code</span><span data-l="pt">Simulador de previdência reconstruído em low-code</span></h3>
-          <dl>
-            <dt><span data-l="en">Context</span><span data-l="pt">Contexto</span></dt>
-            <dd><span data-l="en">A critical retirement simulator in production ran on Angular, Java and Mainframe.</span><span data-l="pt">Um simulador de aposentadoria crítico, em produção, rodava em Angular, Java e Mainframe.</span></dd>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Product Owner and Scrum Master, and hands-on builder: migrated it to Innoveo with full business-rule parity, using the technical pension spreadsheets as the blueprint, and turned the brand's identity kit into high-fidelity Figma prototypes. <a href="https://www.loom.com/share/82888d22a80143b1af7ab5ada6c05d07" target="_blank" rel="noopener">Watch the demo →</a></span><span data-l="pt">Product Owner e Scrum Master, com a mão na massa: migrei o simulador para o Innoveo com paridade total das regras de negócio, usando as planilhas técnicas de previdência como base, e traduzi o kit de identidade visual da marca em protótipos de alta fidelidade no Figma. <a href="https://www.loom.com/share/82888d22a80143b1af7ab5ada6c05d07" target="_blank" rel="noopener">Assista à demonstração →</a></span></dd>
-          </dl>
-          <div class="chips"><span>Innoveo</span><span>Figma</span><span>Scrum</span><span>Angular · Java · Mainframe</span></div>
-        </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Insurance · Low-code</span><span data-l="pt">Seguros · Low-code</span></span>
-          <h3><span data-l="en">Life insurance MVP in under two weeks</span><span data-l="pt">MVP de seguro de vida em menos de duas semanas</span></h3>
-          <dl>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Orchestrated and built a competitive life insurance MVP on the Innoveo low-code platform, so the business could test market hypotheses with a working product.</span><span data-l="pt">Orquestrei e construí um MVP competitivo de seguro de vida na plataforma low-code Innoveo, para o negócio testar hipóteses de mercado com um produto funcionando.</span></dd>
-          </dl>
-          <div class="chips"><span>Innoveo</span><span>MVP</span><span>Citizen developer</span></div>
-        </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Conversational AI · Partnerships</span><span data-l="pt">IA conversacional · Parcerias</span></span>
-          <h3><span data-l="en">Official Blip partnership</span><span data-l="pt">Parceria oficial Blip</span></h3>
-          <dl>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Led the study and accreditation that made the consultancy an official Blip partner, opening a new line of business. Then migrated a real client's chatbot from Zenvia to Blip as PO, Scrum Master and developer: regex validations, rule-based routing, SLAs for human handoff in Blip Desk, input and output tracking for usage reports, and a tailored onboarding guide.</span><span data-l="pt">Liderei o estudo e o credenciamento que tornaram a consultoria parceira oficial Blip, abrindo uma nova frente comercial. Depois, migrei o chatbot de um cliente real da Zenvia para a Blip como PO, Scrum Master e dev: validações com regex, redirecionamento por regras de negócio, SLA para atendimento humano no Blip Desk, trackeamento de inputs e outputs para relatórios de uso e um material de onboarding personalizado.</span></dd>
-          </dl>
-          <div class="chips"><span>Blip</span><span>Blip Desk</span><span>Regex</span><span data-l="en">Data tracking</span><span data-l="pt">Trackeamento de dados</span></div>
-        </article>
-
-        <article class="card case">
-          <span class="tag"><span data-l="en">Cloud · DevOps</span><span data-l="pt">Nuvem · DevOps</span></span>
-          <h3><span data-l="en">Containerized simulation platform on AWS</span><span data-l="pt">Plataforma de simulação conteinerizada na AWS</span></h3>
-          <dl>
-            <dt><span data-l="en">What I did</span><span data-l="pt">O que fiz</span></dt>
-            <dd><span data-l="en">Technical product owner for a high-concurrency simulation service: Docker containers on AWS EC2 with automated build, rebuild and restart pipelines versioned on GitHub.</span><span data-l="pt">PO técnico de um serviço de simulação de alta concorrência: contêineres Docker na AWS EC2 com pipelines automáticos de build, rebuild e restart versionados no GitHub.</span></dd>
-          </dl>
-          <div class="chips"><span>AWS EC2</span><span>Docker</span><span>GitHub</span></div>
+        <article class="card">
+          <span class="num">06</span>
+          <h3><span data-l="en">AI-assisted, human-checked</span><span data-l="pt">IA acelera, pessoa valida</span></h3>
+          <p><span data-l="en">I use AI assistants to draft specs, map payloads and prototype faster. A person reviews and signs off on what ships.</span><span data-l="pt">Uso assistentes de IA para rascunhar especificações, mapear payloads e prototipar mais rápido. Uma pessoa revisa e aprova o que vai para produção.</span></p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="story">
-    <div class="wrap">
-      <p class="kicker"><span data-l="en">Craft</span><span data-l="pt">Na prática</span></p>
-      <h2><span data-l="en">How I write a user story</span><span data-l="pt">Como escrevo uma história de usuário</span></h2>
-      <p class="section-intro">
-        <span data-l="en">An abridged story from the wholesale credit application, with client data removed. Navigation, display rules, validation and actions are all spelled out, so development and QA read the same thing.</span>
-        <span data-l="pt">Uma história resumida da aplicação de crédito atacado, sem dados do cliente. Navegação, regras de exibição, validações e ações ficam explícitas, para que desenvolvimento e QA leiam a mesma coisa.</span>
-      </p>
-      <article class="card story">
-        <p class="story-title">US · <span data-l="en">Client registration and rating</span><span data-l="pt">Cadastro do cliente e rating</span></p>
-        <p class="story-statement" data-l="en"><b>As a</b> credit analyst, <b>I want</b> to fill in and review the client's registration and rating data, <b>so that</b> the proposal's core information is consolidated before the financial analysis.</p>
-        <p class="story-statement" data-l="pt"><b>Como</b> analista de crédito, <b>eu quero</b> preencher e revisar os dados cadastrais e de rating do cliente, <b>para que</b> as informações fundamentais da proposta estejam consolidadas antes da análise financeira.</p>
-        <ol class="ac" data-l="en">
-          <li><b>Navigation and context.</b> Breadcrumb "Service queue / New credit analysis"; the stepper shows "Registration data" as active; an accordion shows the service ID and the client or group name.</li>
-          <li><b>Rating.</b> Toggle "Update the rating?". When on, Suggested rating, Calculated rating and Base date (MM/YYYY) become editable.</li>
-          <li><b>International rating grid.</b> Columns Agency (Fitch, S&amp;P…), Grade, Date, Outlook and Classification; "Add" inserts a row and each row has a delete icon.</li>
-          <li><b>Notes.</b> Free text up to 1,000 characters with a live "characters left" counter.</li>
-          <li><b>Validation and actions.</b> Required fields (*) are validated on "Continue". Cancel returns to the queue without saving; Save &amp; close keeps the data; Continue validates and moves to the next step.</li>
-          <li><b>Non-functional.</b> Follows the Figma design system, fits the Pega workspace with the side menu visible, has clear labels and works with keyboard navigation.</li>
-        </ol>
-        <ol class="ac" data-l="pt">
-          <li><b>Navegação e contexto.</b> Breadcrumb "Pauta de serviços / Nova análise de crédito"; o stepper indica "Dados cadastrais" como etapa ativa; um accordion exibe o ID do serviço e o nome do cliente ou grupo.</li>
-          <li><b>Rating.</b> Chave "Deseja atualizar o Rating?". Quando ativa, Rating sugerido, Rating calculado e Data base (MM/AAAA) ficam editáveis.</li>
-          <li><b>Grade de rating internacional.</b> Colunas Agência (Fitch, S&amp;P…), Nota, Data, Outlook e Classificação; "Adicionar" insere linha e cada linha tem ícone de exclusão.</li>
-          <li><b>Observações.</b> Texto livre de até 1.000 caracteres, com contador dinâmico de caracteres restantes.</li>
-          <li><b>Validação e ações.</b> Campos obrigatórios (*) são validados ao clicar em "Continuar". Cancelar volta à pauta sem salvar; Salvar &amp; fechar persiste os dados; Continuar valida e avança para a próxima etapa.</li>
-          <li><b>Não funcionais.</b> Segue o design system do Figma, se ajusta à área de trabalho do Pega com o menu lateral acessível, tem rótulos claros e navegação por teclado.</li>
-        </ol>
-      </article>
     </div>
   </section>
 
@@ -566,7 +780,7 @@
       <article class="card project featured">
         <div>
           <span class="tag"><span data-l="en">AI agent · Regulatory compliance</span><span data-l="pt">Agente de IA · Compliance regulatório</span></span>
-          <h3 style="margin-top:12px">Ingredient Lens</h3>
+          <h3>Ingredient Lens</h3>
           <p>
             <span data-l="en">An AI agent for the first-pass food label compliance check a regulatory analyst does, for Brazil, the US and the EU. The model reads and explains; a tested rules engine, exposed as MCP tools, decides; a named person signs. It never approves a label on its own.</span>
             <span data-l="pt">Um agente de IA para a primeira análise de conformidade de rótulos de alimentos que um analista regulatório faz, para Brasil, EUA e União Europeia. O modelo lê e explica; um motor de regras testado, exposto como ferramentas MCP, decide; uma pessoa nomeada assina. Ele nunca aprova um rótulo sozinho.</span>
@@ -589,10 +803,10 @@
         </div>
       </article>
 
-      <article class="card project" style="margin-top:16px">
+      <article class="card project">
         <div>
           <span class="tag"><span data-l="en">Product · Privacy by design</span><span data-l="pt">Produto · Privacidade desde a concepção</span></span>
-          <h3 style="margin-top:12px">Êxodo Urbano</h3>
+          <h3>Êxodo Urbano</h3>
           <p>
             <span data-l="en">A cozy 2D farming game set in the Brazilian cerrado. One TypeScript codebase (Phaser 4 + Capacitor 8) ships to web, Android and iOS and works fully offline. Optional accounts back up progress with a local-first sync; LGPD compliance and server-side security rules are covered by tests in CI.</span>
             <span data-l="pt">Um jogo 2D tranquilo de fazenda no cerrado. Uma única base em TypeScript (Phaser 4 + Capacitor 8) roda na web, no Android e no iOS e funciona 100% offline. Contas opcionais fazem backup com sincronização local-first; LGPD e regras de segurança no servidor são cobertas por testes no CI.</span>
@@ -603,10 +817,10 @@
         </div>
       </article>
 
-      <article class="card project" style="margin-top:16px">
+      <article class="card project">
         <div>
           <span class="tag"><span data-l="en">Education · Right-sized solution</span><span data-l="pt">Educação · Solução na medida</span></span>
-          <h3 style="margin-top:12px"><span data-l="en">Class records for a school's coordination team</span><span data-l="pt">Diários e controles para a coordenação de uma escola</span></h3>
+          <h3><span data-l="en">Class records for a school's coordination team</span><span data-l="pt">Diários e controles para a coordenação de uma escola</span></h3>
           <p>
             <span data-l="en">A small school was about to pay for complex software to organize class records and coordinators' controls. Knowing that routine from my years teaching, I recommended and structured a free Google Sheets solution instead: data centralized, organized by subject and folder, and ready to move to a bigger tool when the school grows.</span>
             <span data-l="pt">Uma escola pequena estava prestes a pagar por um software complexo para organizar diários e controles da coordenação. Conhecendo essa rotina dos meus anos como professor, recomendei e estruturei uma solução gratuita no Google Planilhas: dados centralizados, organizados por disciplina e pasta, e prontos para migrar para uma ferramenta maior quando a escola crescer.</span>
@@ -687,16 +901,21 @@
   <section id="contact">
     <div class="wrap">
       <div class="contact-box">
+        <img src="assets/tomas-antonio.jpg" alt="" width="72" height="72" loading="lazy">
         <h2><span data-l="en">Let's talk</span><span data-l="pt">Vamos conversar</span></h2>
         <p>
-          <span data-l="en">Open to Business Analyst and Product Owner roles in Brazil and international teams, fully remote, in English or Portuguese.</span>
-          <span data-l="pt">Aberto a posições de Analista de Negócios e Product Owner no Brasil e em times internacionais, 100% remoto, em português ou inglês.</span>
+          <span data-l="en">Open to Business Analyst and Product Owner roles in Brazil and international teams, fully remote, in English or Portuguese. I usually reply within one business day.</span>
+          <span data-l="pt">Aberto a posições de Analista de Negócios e Product Owner no Brasil e em times internacionais, 100% remoto, em português ou inglês. Costumo responder em até um dia útil.</span>
         </p>
         <div class="cta">
           <a class="btn btn-primary" href="mailto:tomasleones@gmail.com">tomasleones@gmail.com</a>
+          <button class="btn btn-ghost" type="button" data-copy="tomasleones@gmail.com">
+            <span class="copy-label"><span data-l="en">Copy e-mail</span><span data-l="pt">Copiar e-mail</span></span>
+            <span class="copied-label"><span data-l="en">E-mail copied</span><span data-l="pt">E-mail copiado</span></span>
+          </button>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/tmslns" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-ghost" href="cv/Tomas-Antonio-CV-EN.pdf" download>CV (EN)</a>
-          <a class="btn btn-ghost" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download><span data-l="en">CV (PT)</span><span data-l="pt">Currículo (PT)</span></a>
+          <a class="btn btn-ghost" data-l="en" href="cv/Tomas-Antonio-CV-EN.pdf" download>Download CV</a>
+          <a class="btn btn-ghost" data-l="pt" href="cv/Tomas-Antonio-Curriculo-PT.pdf" download>Baixar currículo</a>
         </div>
       </div>
     </div>
@@ -708,21 +927,56 @@
   <div class="wrap">© 2026 Tomás Antonio · <span data-l="en">Bridging the worlds of product, business and development with clarity</span><span data-l="pt">Conversando entre os mundos de produtos, negócios e desenvolvimento com clareza</span></div>
 </footer>
 
+<p class="sr-only" id="announcer" aria-live="polite"></p>
+
 <script>
   (function () {
     var root = document.documentElement;
-    var btn = document.getElementById('lang-btn');
+    var langBtn = document.getElementById('lang-btn');
+    var menuBtn = document.getElementById('menu-btn');
+    var navLinks = document.getElementById('nav-links');
+    var statusEl = document.getElementById('filter-status');
+    var announcer = document.getElementById('announcer');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#case-grid .case'));
+    var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
     var titles = {
       en: 'Tomás Antonio · Business Analyst & Product Owner',
       pt: 'Tomás Antonio · Analista de Negócios & Product Owner'
     };
 
-    function apply(lang) {
-      root.setAttribute('data-lang', lang);
-      root.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
-      document.title = titles[lang];
-      btn.textContent = lang === 'pt' ? 'EN' : 'PT';
-      btn.setAttribute('aria-label', lang === 'pt' ? 'Switch to English' : 'Mudar para português');
+    function lang() { return root.getAttribute('data-lang'); }
+
+    function matches(card, f) {
+      return f === 'all' || (' ' + card.getAttribute('data-tags') + ' ').indexOf(' ' + f + ' ') > -1;
+    }
+
+    function renderStatus() {
+      var shown = cards.filter(function (c) { return !c.hidden; }).length;
+      statusEl.textContent = lang() === 'pt'
+        ? 'Mostrando ' + shown + ' de ' + cards.length + ' cases'
+        : 'Showing ' + shown + ' of ' + cards.length + ' cases';
+    }
+
+    function applyFilter(f) {
+      cards.forEach(function (c) { c.hidden = !matches(c, f); });
+      filters.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-filter') === f)); });
+      renderStatus();
+    }
+
+    filters.forEach(function (b) {
+      var f = b.getAttribute('data-filter');
+      b.querySelector('.count').textContent = cards.filter(function (c) { return matches(c, f); }).length;
+      b.addEventListener('click', function () { applyFilter(f); });
+    });
+
+    function applyLang(l) {
+      root.setAttribute('data-lang', l);
+      root.setAttribute('lang', l === 'pt' ? 'pt-BR' : 'en');
+      document.title = titles[l];
+      langBtn.textContent = l === 'pt' ? 'EN' : 'PT';
+      langBtn.setAttribute('aria-label', l === 'pt' ? 'Switch to English' : 'Mudar para português');
+      menuBtn.setAttribute('aria-label', l === 'pt' ? 'Abrir menu' : 'Open menu');
+      renderStatus();
     }
 
     var initial = 'en';
@@ -732,12 +986,52 @@
     } else {
       try { initial = localStorage.getItem('lang') || 'en'; } catch (e) {}
     }
-    apply(initial === 'pt' ? 'pt' : 'en');
+    applyLang(initial === 'pt' ? 'pt' : 'en');
+    applyFilter('all');
 
-    btn.addEventListener('click', function () {
-      var next = root.getAttribute('data-lang') === 'pt' ? 'en' : 'pt';
-      apply(next);
+    langBtn.addEventListener('click', function () {
+      var next = lang() === 'pt' ? 'en' : 'pt';
+      applyLang(next);
       try { localStorage.setItem('lang', next); } catch (e) {}
+    });
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    menuBtn.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+      return new Promise(function (resolve, reject) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        ok ? resolve() : reject();
+      });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (btn) {
+      btn.addEventListener('click', function () {
+        copyText(btn.getAttribute('data-copy')).then(function () {
+          btn.classList.add('copied');
+          announcer.textContent = lang() === 'pt' ? 'E-mail copiado' : 'E-mail copied';
+          setTimeout(function () { btn.classList.remove('copied'); }, 2200);
+        }, function () {
+          location.href = 'mailto:' + btn.getAttribute('data-copy');
+        });
+      });
     });
   })();
 </script>
