@@ -106,6 +106,7 @@
   .nav-links { display: flex; gap: 22px; margin-left: auto; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
   .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 6px; }
   .nav-actions { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
   .lang-btn, .menu-btn {
     border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
@@ -1017,6 +1018,23 @@
         });
       });
     });
+
+    /* current section in the nav */
+    if ('IntersectionObserver' in window) {
+      var navAnchors = Array.prototype.slice.call(navLinks.querySelectorAll('a'));
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          navAnchors.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      navAnchors.forEach(function (a) {
+        var sec = document.querySelector(a.getAttribute('href'));
+        if (sec) spy.observe(sec);
+      });
+      spy.observe(document.querySelector('.hero'));
+      spy.observe(document.querySelector('.snapshot-wrap'));
+    }
   })();
 </script>
 </body>
